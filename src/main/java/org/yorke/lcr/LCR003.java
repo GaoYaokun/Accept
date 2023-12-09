@@ -41,15 +41,32 @@ import java.util.Arrays;
  */
 public class LCR003 {
     public static void main(String[] args) {
-        int n = 2;
+        int n = 80;
         int[] arr = countBits(n);
         System.out.println(Arrays.toString(arr));
     }
 
+    /**
+     * 要使时间复杂度为O(n)，而不是O(n * sizeof(integer))，不能针对每个数的全部二进制位进行&1操作
+     * 考虑动态规划（找规律，填表，用前值算后值）
+     * 考虑：整数只有 奇数 和 偶数 两种
+     *
+     * 1. i为奇数，则i比上一个偶数i-1的二进制末尾多了一个1
+     *    dp[i] = dp[i-1] + 1;
+     * 2. i为偶数，则i二进制末尾一定为0，此时i右移1位，即除以2，二进制中1的个数不变
+     *    dp[i] = dp[i/2];
+     * 3. 初始条件 dp[0] = 0;
+     *
+     * 由此，可以推算出所有数二进制中1的个数
+     *
+     * 优化： i / 2 = i >> 1
+     *       i % 2 = i & 1
+     */
     private static int[] countBits(int n) {
         int[] ans = new int[n+1];
-
-
+        for(int i = 1; i <= n; i ++) {
+            ans[i] = (i & 1) == 0 ? ans[i >> 1] : ans[i - 1] + 1;
+        }
         return ans;
     }
 }
