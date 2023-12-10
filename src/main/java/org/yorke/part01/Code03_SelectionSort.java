@@ -13,7 +13,7 @@ public class Code03_SelectionSort {
         printArray(arr);
     }
 
-    private static void selectionSort(int[] arr) {
+    public static void selectionSort(int[] arr) {
         if(arr == null || arr.length < 2) {
             return;
         }

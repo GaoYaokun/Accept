@@ -13,7 +13,7 @@ public class Code05_InsertionSort {
         printArray(arr);
     }
 
-    private static void insertionSort(int[] arr) {
+    public static void insertionSort(int[] arr) {
         if(arr == null || arr.length < 2) return;
         // 插入排序模型想象：摸牌，如何使手牌有序
         int n = arr.length;

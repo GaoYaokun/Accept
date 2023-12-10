@@ -13,7 +13,7 @@ public class Code04_BubbleSort {
         printArray(arr);
     }
 
-    private static void bubleSort(int[] arr) {
+    public static void bubleSort(int[] arr) {
         if(arr == null || arr.length < 2) return;
 
         int n = arr.length;

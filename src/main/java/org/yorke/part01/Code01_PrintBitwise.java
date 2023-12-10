@@ -12,19 +12,19 @@ public class Code01_PrintBitwise {
         //int num = 20231205;
 
         //int num = Integer.MAX_VALUE;
-        //int num = Integer.MIN_VALUE;
+        int num = Integer.MIN_VALUE;
+
+        System.out.println(num);
+        print(num);
+
+        //int a = -10086;
+        //print(a);
+        //// >> 带符号右移
+        //print(a >> 1);
+        //// >>> 不带符号右移
+        //print(a >>> 1);
         //
-        //System.out.println(num);
-        //print(num);
-
-        int a = -10086;
-        print(a);
-        // >> 带符号右移
-        print(a >> 1);
-        // >>> 不带符号右移
-        print(a >>> 1);
-
-        print(a << 1);
+        //print(a << 1);
 
         // 求相反数 取反+1
         //int a = -0;
