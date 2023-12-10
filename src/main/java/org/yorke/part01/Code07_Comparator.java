@@ -19,6 +19,7 @@ public class Code07_Comparator {
         for(int i = 0; i < testTimes; i++) {
             int[] arr1 = lenRandonValueRandom(maxLen, maxValue);
             int[] arr2 = copyArray(arr1);
+            // 校验选择排序
             Code03_SelectionSort.selectionSort(arr1);
             if(!isSorted(arr1)) {
                 System.out.println(Arrays.toString(arr2));
