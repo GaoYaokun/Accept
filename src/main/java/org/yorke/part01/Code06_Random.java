@@ -79,6 +79,13 @@ public class Code06_Random {
         }
         System.out.println(Arrays.toString(counts));
 
+        System.out.println("========================");
+        count = 0;
+        for(int i = 0; i < testTimes; i++) {
+            count += g1() == 1 ? 1 : 0;
+        }
+        System.out.println((double) count / (double) testTimes);
+
     }
 
     // 返回[0,1)的一个小数
