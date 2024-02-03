@@ -17,7 +17,7 @@ public class Code07_Comparator {
         int testTimes = 10000;
 
         for(int i = 0; i < testTimes; i++) {
-            int[] arr1 = lenRandonValueRandom(maxLen, maxValue);
+            int[] arr1 = lenRandomValueRandom(maxLen, maxValue);
             int[] arr2 = copyArray(arr1);
             // 校验选择排序
             Code03_SelectionSort.selectionSort(arr1);
@@ -32,7 +32,7 @@ public class Code07_Comparator {
     }
 
     // 构建随机数组
-    public static int[] lenRandonValueRandom(int maxLen, int maxValue) {
+    public static int[] lenRandomValueRandom(int maxLen, int maxValue) {
         int len = (int) (Math.random() * maxLen);
         int[] ans = new int[len];
         for(int i = 0; i < len; i++) {
