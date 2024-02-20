@@ -3,6 +3,8 @@ package org.yorke.part02;
 /**
  * @Author: Yorke
  * @Date: 2023/12/10 19:05
+ *
+ * 有序数组，找出 >= num 的最左元素位置
  */
 public class Code09_BSNearLeft {
     public static void main(String[] args) {

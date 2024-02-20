@@ -3,6 +3,8 @@ package org.yorke.part02;
 /**
  * @Author: Yorke
  * @Date: 2023/12/10 18:56
+ *
+ * 二分查找： 有序数组中找到 num
  */
 public class Code08_BinarySearch {
     public static void main(String[] args) {
