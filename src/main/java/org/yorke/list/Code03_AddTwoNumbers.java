@@ -5,7 +5,7 @@ package org.yorke.list;
  * @Author: Yorke
  * @Date: 2024/2/23 11:07
  *
- * 两数之和
+ * LC2 两数之和
  * 两个数以链表逆序的形式给出
  * 例如 num1 = 342, 链表形式list1表示为 2 ——> 4 ——> 3 ——> null
  * 结果也以链表逆序的形式返回
