@@ -1,4 +1,4 @@
-package org.yorke.kmp;
+package org.yorke.tricks;
 
 /**
  * @Author: Yorke
