@@ -1,5 +1,8 @@
 package org.yorke.leetcode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * @Author: Yorke
  * @Date: 2024/3/14 14:39
@@ -17,7 +20,7 @@ package org.yorke.leetcode;
 public class LC42 {
     public static void main(String[] args) {
         int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
-        int res = trap3(height);
+        int res = trap4(height);
         System.out.println(res);
     }
 
@@ -25,7 +28,7 @@ public class LC42 {
      * 1. 按行求
      * 从高度为1开始逐层寻找雨水
      * 复杂度 O(max * n)
-     * 提交超时
+     * 提交会超时
      */
     public static int trap1(int[] height) {
         int max = 0;
@@ -101,6 +104,27 @@ public class LC42 {
             int h = Math.min(max_left, max_right[i]);
             res += h > height[i] ? h - height[i] : 0;
             max_left = Math.max(max_left, height[i]);
+        }
+        return res;
+    }
+
+    /**
+     * 4. 单调栈
+     * 时间复杂度O(n)
+     */
+    public static int trap4(int[] height) {
+        Deque<Integer> stack = new LinkedList<>();
+        int len = height.length;
+        int res = 0;
+        for(int i = 0; i < len; i ++) {
+            int h = height[i];
+            while(!stack.isEmpty() && h >= height[stack.peek()]) {
+                int low = stack.pop();
+                if (!stack.isEmpty()) {
+                    res += (i - stack.peek() - 1) * (Math.min(h, height[stack.peek()]) - height[low]);
+                }
+            }
+            stack.push(i);
         }
         return res;
     }
